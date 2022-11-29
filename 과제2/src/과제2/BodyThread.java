@@ -37,7 +37,7 @@ public class BodyThread extends Thread{
 				Thread.sleep(80);
 
 				
-				if(finBody==goal+1) {
+				if(finBody==goal) {
 					
 					flag=true;
 					System.out.println("몸체 생산을 종료합니다.");

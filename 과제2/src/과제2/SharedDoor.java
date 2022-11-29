@@ -11,7 +11,7 @@ int n;
 		remainDoor++;
 		}
 	synchronized public void setRemainDoor(int n) {
-		remainDoor=remainDoor-2;
+		remainDoor=remainDoor+n;
 		}
 	
 

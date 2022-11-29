@@ -10,7 +10,7 @@ int n;
 		remainWheel++;
 		}
 	synchronized public void setRemainWheel(int n) {
-		remainWheel=remainWheel-4;
+		remainWheel=remainWheel+n;
 		}
 	
 
