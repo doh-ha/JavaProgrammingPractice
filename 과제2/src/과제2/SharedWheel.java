@@ -3,7 +3,7 @@ package 과제2;
 public class SharedWheel {
 //4개 set
 	private int remainWheel=0;
-int n;
+	int n;
 
 
 	synchronized public void setRemainWheel() {

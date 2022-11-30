@@ -3,7 +3,7 @@ package 과제2;
 public class SharedBody {
 
 	private int remainBody=0;
-int n;
+	int n;
 
 
 	synchronized public void setRemainBody() {

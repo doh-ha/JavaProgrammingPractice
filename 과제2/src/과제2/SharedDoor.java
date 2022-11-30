@@ -2,9 +2,9 @@ package 과제2;
 
 
 public class SharedDoor {
-//4개 set
+
 	private int remainDoor=0;
-int n;
+	int n;
 
 
 	synchronized public void setRemainDoor() {

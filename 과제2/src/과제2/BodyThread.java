@@ -15,7 +15,7 @@ public class BodyThread extends Thread{
 	}
 	
 	public BodyThread(int carNum,SharedCar car,SharedBody b) {
-		this.goal=carNum;
+		this.goal=carNum; //목표 몸체 개수 
 		this.car=car;
 		this.b=b;
 	}
@@ -26,16 +26,13 @@ public class BodyThread extends Thread{
 		while(true) {
 
 			finBody++;//몸체 하나 완성 (생산몸체)
-			b.setRemainBody();
+			b.setRemainBody(); //몸체 재고 저장
 			
 			
 			System.out.println("몸체 스레드   생산 몸체: " + finBody + "   몸체 재고: "+ b.getRemainBody());
 			
 			try {
-				
-
-				
-				if(finBody==goal) {
+				if(finBody==goal) { //생산 몸체가 목표치 달성하면 종료
 					
 					flag=true;
 					
@@ -44,7 +41,7 @@ public class BodyThread extends Thread{
 					break;
 					
 				}
-				Thread.sleep(80);
+				Thread.sleep(80); //0.8초마다 생산
 			}
 			catch(InterruptedException e) {return;}
 		}

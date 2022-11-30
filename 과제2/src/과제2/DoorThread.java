@@ -15,16 +15,16 @@ public class DoorThread extends Thread{
 	}
 	
 	public DoorThread(int carNum, SharedCar car, SharedDoor d) {
-		this.goal=carNum*2;
+		this.goal=carNum*2; //목표 문 개수. 차 하나 당 2개 필요
 		this.car=car;
 		this.d=d;
 	}
 	
 	public void run() {
 		while(true) {
-
-			finDoor++;
-			d.setRemainDoor();
+ 
+			finDoor++; //문 하나 완성 (생산 문)
+			d.setRemainDoor();  //문 재고
  
 			
 			System.out.println("문 스레드   생산 문: " + finDoor + "   문 재고: "+ d.getRemainDoor());
@@ -32,7 +32,7 @@ public class DoorThread extends Thread{
 			try {
 				
 
-				if(finDoor==goal) {
+				if(finDoor==goal) { //생산 문 개수가 목표치 달성하면 종료
 			
 					flag=true;
 					
@@ -42,7 +42,7 @@ public class DoorThread extends Thread{
 					
 					
 				}
-				Thread.sleep(50);
+				Thread.sleep(50); //0.5초마다 생산
 			}
 			catch(InterruptedException e) {return;}
 		}

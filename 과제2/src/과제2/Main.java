@@ -11,7 +11,7 @@ public class Main {
 		System.out.println("자동차 대수를 입력하세요:");
 		carNum=sc.nextInt();
 		
-		SharedCar car=new SharedCar();
+		SharedCar car=new SharedCar(); 
 		
 		SharedWheel w=new SharedWheel();
 		SharedBody b=new SharedBody();

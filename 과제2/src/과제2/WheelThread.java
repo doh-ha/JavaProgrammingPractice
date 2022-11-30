@@ -15,7 +15,7 @@ public class WheelThread extends Thread{
 	}
 	
 	public WheelThread(int carNum, SharedCar car, SharedWheel w) {
-		this.goal=carNum*4;
+		this.goal=carNum*4; //목표 바퀴 개수. 차 하나 당 4개 하므로 carNum의 4배
 		this.car=car;
 		this.w=w;
 	}
@@ -25,18 +25,11 @@ public class WheelThread extends Thread{
 
 			finWheel++;//바퀴 하나 완성 (생산바퀴)
 			w.setRemainWheel(); //재고에 하나 추가
-//			if(w.getRemainWheel()>4) { 
-//				w.setRemainWheel(4);
-//				
-//			}
-			//remain=car.getPerfectCar(); 
-			
+
 			System.out.println("바퀴 스레드   생산 바퀴: " + finWheel + "   바퀴 재고: "+ w.getRemainWheel());
 			
 			try {
-				
-
-				if(finWheel==goal) {
+				if(finWheel==goal) { //생산 바퀴가 목표치 달성하면 종료
 			
 					flag=true;
 					
@@ -46,7 +39,7 @@ public class WheelThread extends Thread{
 					
 					
 				}
-				Thread.sleep(30);
+				Thread.sleep(30); //0.3초마다 생산
 			}
 			catch(InterruptedException e) {return;}
 		}

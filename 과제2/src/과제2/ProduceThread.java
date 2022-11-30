@@ -29,7 +29,7 @@ public class ProduceThread extends Thread{
 	public void run() {
 		while(true) {
 
-			if(b.getRemainBody()>=1 && w.getRemainWheel()>=4 && d.getRemainDoor()>=2) {
+			if(b.getRemainBody()>=1 && w.getRemainWheel()>=4 && d.getRemainDoor()>=2) { //몸체는 하나, 바퀴는 4개, 문은 2개 이상 확보되어야지 조립 시작
 				System.out.println();
 				System.out.println("--------------------------------------------------------------------");
 				car.makeCar(goal,car,w,d,b);
