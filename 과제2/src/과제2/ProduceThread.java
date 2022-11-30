@@ -32,10 +32,11 @@ public class ProduceThread extends Thread{
 	
 
 			if(b.getRemainBody()>=1 && w.getRemainWheel()>=4 && d.getRemainDoor()>=2) {
+				System.out.println();
 				car.makeCar(goal,car,w,d,b);
 				
-				System.out.println("자동차 조립 스레드   조립 자동차: " + car.getPerfectCar() + "   자동차 재고: "+ "null");
-				
+				System.out.println("자동차 조립 스레드   조립 자동차: " + car.getPerfectCar()  + "   자동차 재고: "+ car.getRemainCar());
+				System.out.println();
 			}
 			
 			
@@ -44,10 +45,12 @@ public class ProduceThread extends Thread{
 				
 
 				
-				if(car.getPerfectCar()==goal) {
+				if(car.getRemainCar()==goal) {
 					
 					flag=true;
+					
 					System.out.println("자동차 조립을 종료합니다.");
+					System.out.println();
 					break;
 					
 				}

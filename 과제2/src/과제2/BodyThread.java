@@ -40,7 +40,9 @@ public class BodyThread extends Thread{
 				if(finBody==goal) {
 					
 					flag=true;
+					
 					System.out.println("몸체 생산을 종료합니다.");
+					System.out.println();
 					break;
 					
 				}

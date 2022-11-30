@@ -39,7 +39,9 @@ public class WheelThread extends Thread{
 				if(finWheel==goal) {
 			
 					flag=true;
+					
 					System.out.println("바퀴 생산을 종료합니다.");
+					System.out.println();
 					break;
 					
 					

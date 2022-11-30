@@ -35,7 +35,9 @@ public class DoorThread extends Thread{
 				if(finDoor==goal) {
 			
 					flag=true;
+					
 					System.out.println("문 생산을 종료합니다.");
+					System.out.println();
 					break;
 					
 					
