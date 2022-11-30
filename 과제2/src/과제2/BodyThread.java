@@ -25,11 +25,9 @@ public class BodyThread extends Thread{
 	public void run() {
 		while(true) {
 
-			finBody++;//바퀴 하나 완성 (생산바퀴)
+			finBody++;//몸체 하나 완성 (생산몸체)
 			b.setRemainBody();
-			if(b.getRemainBody()>4) {
-				b.setRemainBody(4);
-			}
+			
 			
 			System.out.println("몸체 스레드   생산 몸체: " + finBody + "   몸체 재고: "+ b.getRemainBody());
 			

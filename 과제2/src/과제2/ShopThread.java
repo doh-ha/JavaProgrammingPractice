@@ -31,9 +31,10 @@ int eachShopSell=0;
 				eachShopSell++;
 				car.sellCar(no, goal, car);
 				System.out.println();
-				System.out.println("**영업점" +no+"    판매대수: " + eachShopSell + "   재고: "+ car.getRemainCar());
+				System.out.println("*****************************************");
+				System.out.println("영업점" +no+"    판매대수: " + eachShopSell + "   재고: "+ car.getRemainCar());
+				System.out.println("*****************************************");
 				System.out.println();
-				
 			}
 			
 			
