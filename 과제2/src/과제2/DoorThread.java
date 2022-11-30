@@ -25,19 +25,12 @@ public class DoorThread extends Thread{
 
 			finDoor++;
 			d.setRemainDoor();
-			if(d.getRemainDoor()>2) {
-				d.setRemainDoor(2);
-				//car.makeCar("바퀴");
-				
-				
-				//remain=remain-4;
-			}
-			//remain=car.getPerfectCar(); 
+ 
 			
 			System.out.println("문 스레드   생산 문: " + finDoor + "   문 재고: "+ d.getRemainDoor());
 			
 			try {
-				Thread.sleep(50);
+				
 
 				if(finDoor==goal) {
 			
@@ -47,6 +40,7 @@ public class DoorThread extends Thread{
 					
 					
 				}
+				Thread.sleep(50);
 			}
 			catch(InterruptedException e) {return;}
 		}

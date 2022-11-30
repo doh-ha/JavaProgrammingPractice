@@ -34,7 +34,7 @@ public class BodyThread extends Thread{
 			System.out.println("몸체 스레드   생산 몸체: " + finBody + "   몸체 재고: "+ b.getRemainBody());
 			
 			try {
-				Thread.sleep(80);
+				
 
 				
 				if(finBody==goal) {
@@ -44,6 +44,7 @@ public class BodyThread extends Thread{
 					break;
 					
 				}
+				Thread.sleep(80);
 			}
 			catch(InterruptedException e) {return;}
 		}

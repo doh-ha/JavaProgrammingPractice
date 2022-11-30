@@ -32,18 +32,16 @@ public class ProduceThread extends Thread{
 	
 
 			if(b.getRemainBody()>=1 && w.getRemainWheel()>=4 && d.getRemainDoor()>=2) {
-				car.makeCar();
+				car.makeCar(goal,car,w,d,b);
 				
 				System.out.println("자동차 조립 스레드   조립 자동차: " + car.getPerfectCar() + "   자동차 재고: "+ "null");
-				b.setRemainBody(-1);
-				w.setRemainWheel(-4);
-				d.setRemainDoor(-2);
+				
 			}
 			
 			
 			
 			try {
-				Thread.sleep(100);
+				
 
 				
 				if(car.getPerfectCar()==goal) {
@@ -53,6 +51,7 @@ public class ProduceThread extends Thread{
 					break;
 					
 				}
+				Thread.sleep(100);
 			}
 			catch(InterruptedException e) {return;}
 		}

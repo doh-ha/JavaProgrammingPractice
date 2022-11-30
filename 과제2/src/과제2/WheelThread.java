@@ -24,20 +24,17 @@ public class WheelThread extends Thread{
 		while(true) {
 
 			finWheel++;//바퀴 하나 완성 (생산바퀴)
-			w.setRemainWheel();
-			if(w.getRemainWheel()>4) {
-				w.setRemainWheel(4);
-				//car.makeCar("바퀴");
-				
-				
-				//remain=remain-4;
-			}
+			w.setRemainWheel(); //재고에 하나 추가
+//			if(w.getRemainWheel()>4) { 
+//				w.setRemainWheel(4);
+//				
+//			}
 			//remain=car.getPerfectCar(); 
 			
 			System.out.println("바퀴 스레드   생산 바퀴: " + finWheel + "   바퀴 재고: "+ w.getRemainWheel());
 			
 			try {
-				Thread.sleep(30);
+				
 
 				if(finWheel==goal) {
 			
@@ -47,6 +44,7 @@ public class WheelThread extends Thread{
 					
 					
 				}
+				Thread.sleep(30);
 			}
 			catch(InterruptedException e) {return;}
 		}
