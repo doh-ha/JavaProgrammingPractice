@@ -4,8 +4,8 @@ package 과제2;
 public class ShopThread extends Thread{
 	int goal;
 	int remain=0;
-	int n;
-
+	int no;
+int eachShopSell=0;
 	private SharedCar car;
 
 	boolean flag = false; // false로 초기화
@@ -18,7 +18,7 @@ public class ShopThread extends Thread{
 	public ShopThread(int n,int carNum,SharedCar car) {
 		this.goal=carNum/3;
 		this.car=car;
-		this.n=n; //몊 번 째 영업점
+		this.no=n; //몊 번 째 영업점
 
 	}
 	
@@ -28,10 +28,12 @@ public class ShopThread extends Thread{
 		while(true) {
 
 			if(car.getRemainCar()>=1) {
-				car.sellCar(n, goal, car);
+				eachShopSell++;
+				car.sellCar(no, goal, car);
 				System.out.println();
-				System.out.println("**영업점" +n+"    판매대수: " + car.getPerfectCar() + "   재고: "+ car.getRemainCar());
+				System.out.println("**영업점" +no+"    판매대수: " + eachShopSell + "   재고: "+ car.getRemainCar());
 				System.out.println();
+				
 			}
 			
 			
@@ -40,11 +42,11 @@ public class ShopThread extends Thread{
 				
 
 				
-				if(car.getPerfectCar()==goal) {
+				if(eachShopSell==goal) {
 					
 					flag=true;
 					
-					System.out.println("영업점" +n+" 의 판매을 종료합니다.");
+					System.out.println("영업점" +no+" 의 판매을 종료합니다.");
 					System.out.println();
 					break;
 					
@@ -54,6 +56,8 @@ public class ShopThread extends Thread{
 			catch(InterruptedException e) {return;}
 		}
 	}
+
+
 	
 
 }
